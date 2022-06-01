@@ -14,23 +14,23 @@ from keras.preprocessing.image import ImageDataGenerator
 
 
 
-def display_some_examples(examples, labels):
+# def display_some_examples(examples, labels):
 
-   plt.figure(figsize=(10,10))
+#    plt.figure(figsize=(10,10))
 
-   for i in range(25):
+#    for i in range(25):
 
-      idx = np.random.randint(0, examples.shape[0] - 1)
-      img = examples[idx]
-      label = labels[idx]
+#       idx = np.random.randint(0, examples.shape[0] - 1)
+#       img = examples[idx]
+#       label = labels[idx]
 
-      plt.subplot(5,5, i+1)
-      plt.title(str(label))
-      plt.imshow(img)
+#       plt.subplot(5,5, i+1)
+#       plt.title(str(label))
+#       plt.imshow(img)
 
-   plt.show()
+#    plt.show()
 
-
+#processes the dataset into easily usable directories
 def process_plantvillage_dataset(path_to_dataset, val_split_size=0.1, test_split_size=0.1):
    #deletes grayscale and segmented datasets
    path_to_grayscale_set = os.path.join(path_to_dataset, 'grayscale')
