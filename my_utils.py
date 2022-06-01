@@ -1,5 +1,4 @@
 from ctypes.wintypes import RGB
-from grpc import xds_server_credentials
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -132,14 +131,6 @@ def create_generators(batch_size, train_data_path, val_data_path, test_data_path
 
    return train_generator, val_generator, test_generator
 
-def fix_gpu():
-    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
-    config = tf.compat.v1.ConfigProto()
-    config.gpu_options.allow_growth = True
-    session = tf.compat.v1.InteractiveSession(config=config)
-
 def test_model(test_generator, val_generator):
    model = tf.keras.models.load_model('./Models')
    model.summary
@@ -152,6 +143,5 @@ def test_model(test_generator, val_generator):
 
 if __name__=="__main__":
 
-   path_to_dataset= "C:\\Users\\Omar\\Documents\\GitHub\\WeedDetection-TensorFlow\\~\\tensorflow_datasets\\plantvillage dataset"
-
-   process_plantvillage_dataset(path_to_dataset=path_to_dataset)
+   model = tf.keras.models.load_model('./Models')
+   model.summary()

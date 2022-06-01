@@ -2,7 +2,7 @@ import os
 import numpy as np
 
 import tensorflow as tf
-from my_utils import create_generators, process_plantvillage_dataset, fix_gpu, test_model
+#from my_utils import create_generators, process_plantvillage_dataset, fix_gpu, test_model
 from tensorflow.python.keras.callbacks import EarlyStopping
 from leaves_model import diseasedleaves_model
 
@@ -14,14 +14,14 @@ if __name__=="__main__":
    #path_to_dataset= "C:\\WeedDetection\\plantvillage dataset"
    #process_plantvillage_dataset(path_to_dataset=path_to_dataset)
 
-   path_to_train= "C:\\WeedDetection\\plantvillage dataset\\train"
-   path_to_val= "C:\\WeedDetection\\plantvillage dataset\\val"
-   path_to_test= "C:\\WeedDetection\\plantvillage dataset\\test"
-   batch_size = 8
-   epochs = 30
+   # path_to_train= "C:\\WeedDetection\\plantvillage dataset\\train"
+   # path_to_val= "C:\\WeedDetection\\plantvillage dataset\\val"
+   # path_to_test= "C:\\WeedDetection\\plantvillage dataset\\test"
+   # batch_size = 8
+   # epochs = 30
 
-   train_generator, val_generator, test_generator = create_generators(batch_size=batch_size, train_data_path=path_to_train, val_data_path=path_to_val, test_data_path=path_to_test)
-   nbr_classes = train_generator.num_classes
+   # train_generator, val_generator, test_generator = create_generators(batch_size=batch_size, train_data_path=path_to_train, val_data_path=path_to_val, test_data_path=path_to_test)
+   # nbr_classes = train_generator.num_classes
 
    #path_to_save_model = './Models'
 
@@ -49,4 +49,11 @@ if __name__=="__main__":
    #   validation_steps=val_generator.samples//val_generator.batch_size,
    #   callbacks=[checkpoint_saver],
    #   )
-   test_model(test_generator, val_generator)
+   #test_model(test_generator, val_generator)
+
+   converter = tf.lite.TFLiteConverter.from_saved_model('./Models')
+   tflite_model=converter.convert()
+
+   with open('leafdetection_model.tflite', 'wb') as f:
+      f.write(tflite_model)
+
