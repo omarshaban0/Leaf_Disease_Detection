@@ -6,7 +6,7 @@
 
 Modern agriculture has come a long way, with many technologies and tools to prevent issues in farming and maximize profits. Some of these tools can be detrimental to the environment though, with chemicals such as herbicides, fungicides, etc. effecting our plants and soil. 
 
-This is why I created this project, which uses a [dataset](https://www.tensorflow.org/datasets/catalog/plant_village) of over 54,000 images of 38 different classes of 38 classes of varying leaves, and 14 different species of plants (Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, and Tomato).
+This is why I created this project, which uses a [dataset](https://www.tensorflow.org/datasets/catalog/plant_village) of over 54,000 images of 38 different classes of varying leaves of 14 different species of plants (Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, and Tomato).
 
 ## Project Details
 
