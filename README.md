@@ -6,10 +6,9 @@ Modern agriculture has come a long way, with many technologies and tools to prev
 
 This is why I created this project, which uses a [dataset](https://www.tensorflow.org/datasets/catalog/plant_village) of over 54,000 images of 14 different species of plants (Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, and Tomato). These images are in 38 different classes, each class eitherb eing a healthy version of that plant, or a diseased version of it. For example, this first image is of a healthy apple leaf, but the second one is a leaf infected with [Apple Scab](https://www.apsnet.org/edcenter/disandpath/fungalasco/pdlessons/Pages/AppleScab.aspx).
 
-![Apple_Scab](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/Apple_Scab_Leaf.JPG)
-
-
 ![Apple_Healthy](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/Apple_Healthy_Leaf.JPG)
+
+![Apple_Scab](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/Apple_Scab_Leaf.JPG)
 
 ## Project Details
 
