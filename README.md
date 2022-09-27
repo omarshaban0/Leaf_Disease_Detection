@@ -1,59 +1,52 @@
-# Leaf_Disease_Detectio
 
-![MERN Stack Photo](https://www.mindinventory.com/blog/wp-content/uploads/2021/06/mern-stack.png)
+# Leaf Disease Detection - READ ME IN PROGRESS
 
-My friends and I love watching, analyzing and enjoying films across many genres and regions. That is why, I wanted
-to create a place where me and my friends can write and critique the movies we watch. The NS Movie Review Blog
-will allow authorized users to create, edit, and delete reviews for movies provided by the IMDb API. These reviews can be
-viewed by anybody on the homepage, and can be queried through the search function.
+
+Modern agriculture has come a long way, with many technologies and tools to prevent issues in farming and maximize profits. Some of these tools can be detrimental to the environment though, with chemicals such as herbicides, fungicides, etc. effecting our plants and soil. 
+
+This is why I created this project, which uses a [dataset](https://www.tensorflow.org/datasets/catalog/plant_village) of over 54,000 images of 14 different species of plants (Apple, Blueberry, Cherry, Corn, Grape, Orange, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, and Tomato). These images are in 38 different classes, each class eitherb eing a healthy version of that plant, or a diseased version of it. For example, this first image is of a healthy apple leaf, but the second one is a leaf infected with [Apple Scab](https://www.apsnet.org/edcenter/disandpath/fungalasco/pdlessons/Pages/AppleScab.aspx).
+
+![Apple_Healthy](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/Apple_Healthy_Leaf.JPG)
+
+![Apple_Scab](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/Apple_Scab_Leaf.JPG)
+
+## Project Details
+
+####  Model Summary
+
+![Model Summary](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/Model_Summary.PNG)
+
+####  Result of testing set, shows a ~97% accuracy
+
+![Accuracy](https://github.com/omarshaban0/Leaf_Disease_Detection/blob/main/Assets%20for%20Readme/accuracy.png)
 
 ## Technologies Used
-This is a **MERN Stack application** which is made up by four key technologies:
+I used 5 key technologies :
 
-* [MongoDB](https://docs.mongodb.com/) - document base
-* [express.js](https://expressjs.com/) - Node.js web framework
-* [react.js](https://reactjs.org/) - a client-side JavaScript framework
-* [node.js](https://nodejs.org/en/docs/) - an open source JavaScript web server/runtime
+* [TensorFlow](https://www.tensorflow.org/) - open source library used for machine learning
+* [Google Coral DevBoard](https://coral.ai/products/dev-board/) - single board computer mainly used for running machine learning models, most important aspect is the [TPU](https://www.assured-systems.com/us/news/article/google-edge-tpu---what-is-it-and-how-does-it-work/). I am also using the Coral Camera, a camera used specifically for the devboard.
+* [miniconda](https://docs.conda.io/en/latest/miniconda.html) - minimal version of conda, an environment manager
+* [pip](https://github.com/pypa/pip) - python package installer and management tool
+* [PlantVillage](https://www.tensorflow.org/datasets/catalog/plant_village) - Dataset used for ML model training, validation, and testing
 
 
 ##### Other key technologies used include:
 
-* [axios](https://www.npmjs.com/package/axios) - promise based HTTP client for browser and Node.js
-* [react-router-dom](https://www.npmjs.com/package/react-router-dom) - DOM bindings for React Router ie) the router components for websites
-* [nodemon](https://www.npmjs.com/package/nodemon) - automatically restarts node application when file changes are detected
-* [IMDb API](https://developer.imdb.com/) - an API that returns metadata on +8 million movies
+* [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) - single board computer used as host for setting up DevBoard
+* [Visual Studio Code](https://code.visualstudio.com/) - IDE used for development
 
 
 #### More technologies will be added in the future as more features are added
 
-## Project Setup
-After cloning the repository to your machine:
+## Project Setup - WIP
 
-Install dependencies in both client and server sides of the application:
 
-`npm install`
-
-To test components of the application:
-
-#### Backend:
-
-make environment file with the following keys' values:
-```
-MOVIES_DB_URI= "path to mongodb url"
-MOVIES_NS = "database name"
-PORT = "port number"
-```
-Head to the backend directory of the project, and run:
-
-`nodemon server`
-
-#### Frontend:
-
-Head to the frontend directory of the project, and run:
-
-`npm start`
-
-## Future Scope
-1. I want to fix the current issues with the delete function of the API
-2. I want to add more fields to the API get functions
-After these problems are addressed, I am going to continue the frontend, and look into how to add an authorization functionality to the application.
+## Future Scope - WIP
+#### To be completed
+1. Finish testing code. I have made the model with 97% accuracy, but I need to add the funcionality of inputting a path of an image, and returning what class of leaf it is. This should be very easy, with loading the image, the model, and then running the model onto the image.
+2. Running model on DevBoard with camera. I have already converted the model into a tflite in the code, and then was able to use .... I am now trying to use the given [image recognition tools](https://github.com/google-coral/examples-camera) from google, and have currently tried gstreamer but was not able to run the model on it, only being able to access the camera.
+3. Cleaning up code. I feel that my code is kind of scattered, and needs to be compiled into specific files for specific functions.
+4. Test Model in person. After I finish #2 (Running Model on DevBoard), I plan on visiting some orchards and farms to test the model with actual leaves. I expect that it will not do as well, since the training images had black/grey backgrounds, and were all in the same direction, which is not realistic.
+#### Things to Explore
+1. Using C++ for model. While Python is great for a lot of reasons, it can be very costly in speed and power. This is why I want to explore using the C++ infrastructure for Tensorflow, and see if it can make it more efficient.
+2. Using TensorFlow technology to monitor/graph model training. I have recently seen some other projects that were able to produce graphs, and data to show how the process of training the model was over time. I think implementing that tool will make it easier to monitor how tweaks in the model will effect the training.
