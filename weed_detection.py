@@ -14,9 +14,9 @@ if __name__=="__main__":
    process_plantvillage_dataset(path_to_dataset=path_to_dataset)
 
    #set path to previous path, but add \\train, \\val, and \\test to each corresponding \\test
-   path_to_train= "C:\\WeedDetection\\plantvillage dataset\\train"
-   path_to_val= "C:\\WeedDetection\\plantvillage dataset\\val"
-   path_to_test= "C:\\WeedDetection\\plantvillage dataset\\test"
+   path_to_train= "C:\\Users\\omaro\\Documents\\GitHub\\Leaf_Disease_Detection\\plantvillage dataset\\train"
+   path_to_val= "C:\\Users\\omaro\\Documents\\GitHub\\Leaf_Disease_Detection\\plantvillage dataset\\val"
+   path_to_test= "C:\\Users\\omaro\\Documents\\GitHub\\Leaf_Disease_Detection\\plantvillage dataset\\test"
    batch_size = 8
    epochs = 30
 

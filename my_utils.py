@@ -145,3 +145,17 @@ if __name__=="__main__":
 
    model = tf.keras.models.load_model('./Models')
    model.summary()
+
+   apple_scab_path = "C:\\Users\\omaro\\Documents\\GitHub\\Leaf_Disease_Detection\\Testing Photos\\Apple__Apple_Scab.png"
+
+   apple_scab_sideways_path = "C:\\Users\\omaro\\Documents\\GitHub\\Leaf_Disease_Detection\\Testing Photos\\Apple__Apple_Scab_Sideways.png"
+
+   apple_healthy_path = "C:\\Users\\omaro\\Documents\\GitHub\\Leaf_Disease_Detection\\Testing Photos\\Apple__Healthy.png"
+
+   apple_scab = tf.io.read_file(apple_scab_path)
+   apple_scab = tf.image.decode_png(apple_scab_path)
+   apple_scab = tf.io.read_file(apple_scab_path)
+
+   apple_scab_sideways
+
+   apple_healthy
